@@ -5,7 +5,10 @@ from aws_cdk import core
 from inacap_lab.inacap_lab_stack import InacapLabStack
 
 
-app = core.App()
-InacapLabStack(app, "inacap-lab")
+region = 'us-east-1'
 
+app = core.App()
+vpc_stack = InacapLabStack(app, "inacap-lab", env={'region': region})
 app.synth()
+
+
